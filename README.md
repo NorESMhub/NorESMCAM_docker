@@ -2,11 +2,6 @@
 
 Test a simple NorESM configuration with docker
 
-# NorESM_docker
-
-Test a simple NorESM configuration with docker
-
-
 CESM docker container for 1850_CAM60%NORESM_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV compset and resolution f19_tn14.
 
 - Input dataset is stored and available in zenodo (5.8GB)
