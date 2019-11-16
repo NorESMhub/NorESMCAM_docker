@@ -12,7 +12,7 @@ CESM docker container for 1850_CAM60%NORESM_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_S
 
 ### NorESM source code
 
-The [NorESM](https://noresm-docs.readthedocs.io/en/latest/) source code is not freely available so we assumed you have access to the private [Noresm-dev repository](https://github.com/metno/noresm-dev) and created a tarball:
+The [NorESM](https://noresm-docs.readthedocs.io/en/latest/) source code is not freely available so we assumed you have access to the private [Noresm-dev repository](https://github.com/metno/noresm-dev):
 
 ```
 mkdir -p /opt/uio/packages
