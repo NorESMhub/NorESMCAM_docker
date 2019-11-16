@@ -16,6 +16,7 @@ The [NorESM](https://noresm-docs.readthedocs.io/en/latest/) source code is not f
 
 ```
 mkdir -p /opt/uio/packages
+cd /opt/uio/packages
 git clone -b featureCESM2.1.0-OsloDevelopment https://github.com/metno/noresm-dev.git
 ```
 The NorESM source code is then passed to the docker container for running norESM.
