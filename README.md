@@ -59,6 +59,18 @@ docker run -i -v /opt/uio/inputdata:/home/cesm/inputdata -v /opt/uio/archive:/ho
               -v /opt/uio/packages:/home/cesm/packages -t nordicesmhub/noresm:latest
 ```
 
-- We are running 5 days using 16 processors.
+- We are running 5 days using 8 processors. With this configuration, it uses about 1.3GB per processors.
 
+```
+  total pes active           : 8
+  mpi tasks per node               : 4
+  pe count for cost estimate : 8
 
+  Overall Metrics:
+    Model Cost:             660.29   pe-hrs/simulated_year
+    Model Throughput:         0.29   simulated_years/day
+
+    Init Time   :     162.902 seconds
+    Run Time    :    4070.297 seconds      814.059 seconds/day
+    Final Time  :       0.005 seconds
+```
