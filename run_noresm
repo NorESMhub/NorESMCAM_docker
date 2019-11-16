@@ -5,7 +5,7 @@ sed -i -e "s/\$CESM_PES/$CESM_PES/g" /home/cesm/.cime/config_machines.xml
 cd /home/cesm/packages/noresm-dev
 
 sed -i.bak 's/# ARCHIVE COMMAND SIMILAR ACROSS ALL PLATFORMS/AR="$AR cq"/' cime/src/externals/mct/configure
-cd noresm-dev/cime/scripts
+cd cime/scripts
 ./create_newcase --case /home/cesm/cases/cN1850 --compset \
       1850_CAM60%NORESM_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV \
       --res f19_tn14 --machine espresso --run-unsupported 
