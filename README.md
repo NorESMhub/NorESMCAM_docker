@@ -18,7 +18,11 @@ The [NorESM](https://noresm-docs.readthedocs.io/en/latest/) source code is not f
 mkdir -p /opt/uio/packages
 cd /opt/uio/packages
 git clone -b featureCESM2.1.0-OsloDevelopment https://github.com/metno/noresm-dev.git
+
+# Remove obsolete python 2 prints
+sed -i.bak 's/print /#AF print /' noresm-dev/cime/scripts/Tools/../../scripts/lib/CIME/case/case_submit.py
 ```
+
 The NorESM source code is then passed to the docker container for running norESM.
 
 ### NorESM docker
