@@ -5,12 +5,23 @@ sed -i -e "s/\$CESM_PES/$CESM_PES/g" /home/cesm/.cime/config_machines.xml
 cd /home/cesm/packages/noresm-dev
 
 sed -i.bak 's/# ARCHIVE COMMAND SIMILAR ACROSS ALL PLATFORMS/AR="$AR cq"/' cime/src/externals/mct/configure
+
 cd cime/scripts
+
 ./create_newcase --case /home/cesm/cases/cN1850 --compset \
       1850_CAM60%NORESM_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV \
       --res f19_tn14 --machine espresso --run-unsupported 
-cd /home/cesm/cases/cN1850                          
+      
+cd /home/cesm/cases/cN1850    
+
+# Change the number of nodes per component
+NUMNODES=-1
+./xmlchange --file env_mach_pes.xml --id NTASKS --val ${NUMNODES}
+./xmlchange --file env_mach_pes.xml --id NTASKS_ESP --val 1
+./xmlchange --file env_mach_pes.xml --id ROOTPE --val 0
+
 ./case.setup 
+
 # Customize run
 cat >> user_nl_cam << EOF
 nhtfrq(1) = -24
