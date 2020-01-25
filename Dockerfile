@@ -60,7 +60,7 @@ WORKDIR /home/cesm
 
 COPY run_noresm /home/cesm/
 
-ENTRYPOINT ./run_noresm
+#ENTRYPOINT ./run_noresm
 
-#CMD ["/bin/bash"]
+CMD ["/bin/bash"]
 
