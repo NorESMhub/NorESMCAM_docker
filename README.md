@@ -74,3 +74,34 @@ docker run --shm-size 8G -i -v /opt/uio/inputdata:/home/cesm/inputdata -v /opt/u
     Run Time    :    4070.297 seconds      814.059 seconds/day
     Final Time  :       0.005 seconds
 ```
+You can now exit the container.
+
+### To return into the same container
+
+Find the Container ID:
+```
+docker ps --all
+
+CONTAINER ID        IMAGE                        COMMAND             CREATED             STATUS                      PORTS               NAMES
+d40294d23839        nordicesmhub/noresm:latest   "/bin/bash"         25 minutes ago      Exited (0) 59 seconds ago                       objective_meitner
+```
+
+Then execute:
+```
+docker start d40294d23839
+d40294d23839
+```
+
+You can check that the container is now up again:
+```
+docker ps --all
+CONTAINER ID        IMAGE                        COMMAND             CREATED             STATUS              PORTS               NAMES
+d40294d23839        nordicesmhub/noresm:latest   "/bin/bash"         25 minutes ago      Up 2 seconds                            objective_meitner
+```
+
+and go back into it by typing:
+```
+docker exec -it d40294d23839 bash
+cesm@d40294d23839:~$ ls
+archive  cases  inputdata  packages  run_noresm  work
+```
