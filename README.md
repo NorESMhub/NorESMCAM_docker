@@ -55,8 +55,8 @@ drwxrwxr-x.  8 centos users        4096 Nov  9 15:21 archive
 
 ```
 docker pull nordicesmhub/noresm:latest
-docker run -i -v /opt/uio/inputdata:/home/cesm/inputdata -v /opt/uio/archive:/home/cesm/archive \
-              -v /opt/uio/packages:/home/cesm/packages -t nordicesmhub/noresm:latest
+docker run --shm-size 8G -i -v /opt/uio/inputdata:/home/cesm/inputdata -v /opt/uio/archive:/home/cesm/archive \
+                            -v /opt/uio/packages:/home/cesm/packages -t nordicesmhub/noresm:latest
 ```
 
 - We are running 5 days using 8 processors. With this configuration, it uses about 1.3GB per processors.
